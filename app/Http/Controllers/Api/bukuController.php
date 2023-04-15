@@ -14,85 +14,33 @@ class bukuController extends Controller
     public function index ()
     {
         $buku = buku::all();
-        if ($buku->count() > 0){
-
-            return response()->json([
-                'status' => 200,
-                'buku' => $buku
-            ], 200);
-        }else{
-
-            return response()->json([
-                'status' => 404,
-                'message' => 'Tidak ditemukan data buku'
-            ], 404);
-        }
+        return response()->json([
+            'data' => $buku
+        ]);
     }
 
     #=========store(create)============
     public function store (Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'judul'=> 'required',
-            'kode_buku'=> 'required',
-            'pengarang'=> 'required',
-            'penerbit'=> 'required',
-            'tahun_terbit'=> 'required'
+        $buku = buku::create([
+            'judul' => $request->judul,
+            'kode_buku' => $request->kode_buku,
+            'pengarang' => $request->pengarang,
+            'penerbit' => $request->penerbit,
+            'tahun_terbit' => $request->tahun_terbit
         ]);
 
-        if($validator->fails()){
-
-            return response()->json([
-                'status' => 422,
-                'errors' => $validator->messages()
-            ], 422);
-        }else {
-
-            $buku = buku::create([
-                'judul' => $request->judul,
-                'kode_buku' => $request->kode_buku,
-                'pengarang' => $request->pengarang,
-                'penerbit' => $request->penerbit,
-                'tahun_terbit' => $request->tahun_terbit
-            ]);
-
-            if($buku){
-
-                return response()->json([
-                    'status' => 200,
-                    'message' => 'data buku berhasil ditambahkan'
-
-                ], 200);
-            }else{
-
-                return response()->json([
-                    'status' => 500,
-                    'message' => 'Mohon maaf ada yang bermasalah!'
-                ], 500);
-
-            }
-        }
+        return response()->json([
+            'data' => $buku
+        ]);
     }
 
     #=========show by id============
     public function show($id)
     {
         $buku = buku::find($id);
-        if($buku){
-
-            return response()->json([
-                'status' => 200,
-                'buku' => $buku
-
-            ], 200);
-        }else{
-
-            return response()->json([
-                'status' => 404,
-                'message' => "Tidak ada buku yang ditemukan"
-            ], 404);
-        }
+        return response()->json([
+            'data' => $buku
+        ]);
     }
 }
-
-    
