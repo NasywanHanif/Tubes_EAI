@@ -18,7 +18,7 @@ Projek berjudul sistem informasi perpustakaan ini merupakan tugas pengganti UTS 
 | 4   | `students/{id}/edit`       | `PUT`  | Mengubah/memperbarui data student                 |
 | 5   | `students/{id}/delete`     |`DELETE`| Menghapus data student                            |
 | 6   | `buku/`                    | `GET`  | Menampilkan data buku keseluruhan                 |
-| 7   | `students/store`           | `POST` | Menambahkan data buku                             |
+| 7   | `buku/store`               | `POST` | Menambahkan data buku                             |
 | 8   | `buku/{id}`                | `GET`  | Menampilkan data buku berdasarkan id tertentu     |
 | 5   | `buku/{id}/delete`         |`DELETE`| Menghapus data buku                               |
 
