@@ -32,3 +32,4 @@ Route::delete('students/{id}/delete', [studentController::class, 'destroy']);
 Route::get('buku', [bukuController::class, 'index']);
 Route::post('buku', [bukuController::class, 'store']);
 Route::get('buku/{id}', [bukuController::class, 'show']);
+Route::delete('buku/{id}/delete', [bukuController::class, 'destroy']);
