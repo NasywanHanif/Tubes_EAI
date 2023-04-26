@@ -20,7 +20,7 @@ Projek berjudul sistem informasi perpustakaan ini merupakan tugas pengganti UTS 
 | 6   | `buku/`                    | `GET`  | Menampilkan data buku keseluruhan                 |
 | 7   | `students/store`           | `POST` | Menambahkan data buku                             |
 | 8   | `buku/{id}`                | `GET`  | Menampilkan data buku berdasarkan id tertentu     |
-
+| 5   | `buku/{id}/delete`         |`DELETE`| Menghapus data buku                               |
 
 
 
